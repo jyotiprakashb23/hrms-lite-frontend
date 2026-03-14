@@ -19,7 +19,7 @@ const DeleteConfirmModal = ({ employee, onConfirm, onCancel }) => {
 
           <div className="bg-slate-50 border border-slate-200 rounded-lg px-4 py-3 mb-6">
             <p className="text-sm font-semibold text-slate-800">{employee.full_name || employee.name}</p>
-            <p className="text-xs text-slate-500">{employee.id} &bull; {employee.department}</p>
+            <p className="text-xs text-slate-500">{employee.employee_id} &bull; {employee.department}</p>
           </div>
 
           <div className="flex gap-3 justify-end">
