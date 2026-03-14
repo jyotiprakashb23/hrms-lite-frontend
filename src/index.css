@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+@theme {
+  --color-zoho-dark: #151e32;
+  --color-zoho-nav: #22304e;
+  --color-zoho-bg: #f4f5f7;
+  --color-zoho-text: #333333;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, sans-serif;
+  background-color: var(--color-zoho-bg);
+  color: var(--color-zoho-text);
+}
