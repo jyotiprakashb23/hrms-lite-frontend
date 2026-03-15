@@ -7,7 +7,10 @@ const request = async (path, options = {}) => {
   });
   if (!res.ok) {
     const error = await res.json().catch(() => ({ detail: res.statusText }));
-    throw new Error(error.detail || 'Request failed');
+    // throw new Error(error.detail || 'Request failed');
+    throw new Error(
+    Array.isArray(error.detail) ? error.detail[0].msg : error.detail || 'Request failed'
+);
   }
   // 204 No Content
   if (res.status === 204) return null;
