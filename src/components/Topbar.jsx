@@ -8,7 +8,7 @@ const PAGE_META = {
 
 const Topbar = ({ onMenuClick }) => {
   const location = useLocation();
-  const page = PAGE_META[location.pathname] || { title: 'WorkNest', subtitle: '' };
+  const page = PAGE_META[location.pathname] || { title: 'PeopleDesk', subtitle: '' };
 
   const today = new Date().toLocaleDateString('en-US', {
     weekday: 'short',

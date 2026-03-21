@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
-  Briefcase, Loader2, AlertCircle, Eye, EyeOff,
+  UsersRound, Loader2, AlertCircle, Eye, EyeOff,
   Users, CalendarCheck, ShieldCheck,
 } from 'lucide-react';
 import useStore from '../store/useStore';
@@ -109,9 +109,9 @@ const Login = () => {
             className="w-10 h-10 rounded-xl flex items-center justify-center shadow-lg"
             style={{ background: 'linear-gradient(135deg, #3b82f6, #6366f1)' }}
           >
-            <Briefcase size={18} className="text-white" />
+            <UsersRound size={18} className="text-white" />
           </div>
-          <span className="text-white font-bold text-lg tracking-wide">WorkNest</span>
+          <span className="text-white font-bold text-lg tracking-wide">PeopleDesk</span>
         </div>
 
         {/* ── Hero copy ── */}
@@ -157,7 +157,7 @@ const Login = () => {
 
         {/* ── Bottom tagline ── */}
         <p className="relative z-10 text-slate-600 text-[11px]">
-          &copy; 2026 WorkNest &mdash; HR Management System
+          &copy; 2026 PeopleDesk &mdash; HR Management System
         </p>
       </div>
 
@@ -182,9 +182,9 @@ const Login = () => {
               className="w-9 h-9 rounded-xl flex items-center justify-center"
               style={{ background: 'linear-gradient(135deg, #3b82f6, #6366f1)' }}
             >
-              <Briefcase size={16} className="text-white" />
+              <UsersRound size={16} className="text-white" />
             </div>
-            <span className="font-bold text-slate-800 text-lg">WorkNest</span>
+            <span className="font-bold text-slate-800 text-lg">PeopleDesk</span>
           </div>
 
           {/* Heading */}
@@ -263,7 +263,7 @@ const Login = () => {
                   <span>{loadingLabels[loadingStep]}</span>
                 </>
               ) : (
-                'Sign In to WorkNest'
+                'Sign In to PeopleDesk'
               )}
             </button>
           </form>

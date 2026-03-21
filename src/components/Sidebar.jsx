@@ -1,5 +1,5 @@
 import { NavLink, useNavigate } from 'react-router-dom';
-import { Users, CalendarCheck, Briefcase, LogOut } from 'lucide-react';
+import { Users, CalendarCheck, UsersRound, LogOut } from 'lucide-react';
 import useStore from '../store/useStore';
 
 const navItems = [
@@ -21,10 +21,10 @@ const Sidebar = ({ closeSidebar }) => {
       {/* Brand */}
       <div className="px-5 py-5 flex items-center gap-3 border-b border-white/10">
         <div className="w-9 h-9 bg-emerald-600 rounded-xl flex items-center justify-center shadow-lg shrink-0">
-          <Briefcase size={17} className="text-white" />
+          <UsersRound size={17} className="text-white" />
         </div>
         <div>
-          <h1 className="text-white text-[15px] font-bold leading-tight">WorkNest</h1>
+          <h1 className="text-white text-[15px] font-bold leading-tight">PeopleDesk</h1>
           <p className="text-slate-500 text-[10px]">HR Management System</p>
         </div>
       </div>
