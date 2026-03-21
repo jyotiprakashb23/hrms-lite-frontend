@@ -1,15 +1,44 @@
 @import "tailwindcss";
 
 @theme {
-  --color-zoho-dark: #151e32;
-  --color-zoho-nav: #22304e;
-  --color-zoho-bg: #f4f5f7;
-  --color-zoho-text: #333333;
+  --color-zoho-dark: #111827;
+  --color-zoho-nav: #1e293b;
+  --color-zoho-bg: #f1f5f9;
+  --color-zoho-text: #1e293b;
 }
 
 body {
   margin: 0;
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', Roboto, Oxygen, sans-serif;
   background-color: var(--color-zoho-bg);
   color: var(--color-zoho-text);
+  -webkit-font-smoothing: antialiased;
 }
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0px) scale(1); }
+  50%       { transform: translateY(-28px) scale(1.04); }
+}
+@keyframes float-mid {
+  0%, 100% { transform: translateY(0px) scale(1); }
+  50%       { transform: translateY(-18px) scale(1.02); }
+}
+@keyframes float-fast {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-12px); }
+}
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.animate-float-slow  { animation: float-slow 7s ease-in-out infinite; }
+.animate-float-mid   { animation: float-mid  5s ease-in-out infinite; }
+.animate-float-fast  { animation: float-fast 3.5s ease-in-out infinite; }
+.animate-fade-up     { animation: fade-up 0.55s cubic-bezier(.22,1,.36,1) both; }
+.animate-fade-up-delay { animation: fade-up 0.55s 0.1s cubic-bezier(.22,1,.36,1) both; }
+.animate-fade-in     { animation: fade-in 0.4s ease both; }

@@ -7,7 +7,7 @@ const MainLayout = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
-    <div className="flex h-screen w-full bg-[#f4f5f7] overflow-hidden font-sans text-[#333333]">
+    <div className="flex h-screen w-full bg-slate-100 overflow-hidden font-sans text-[#333333]">
       
       {/* Dark overlay on mobile when sidebar is open */}
       {sidebarOpen && (

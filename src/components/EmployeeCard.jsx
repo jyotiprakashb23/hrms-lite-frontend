@@ -1,37 +1,97 @@
-import { Trash2 } from 'lucide-react';
+import { Trash2, Mail } from 'lucide-react';
+
+const AVATAR_GRADIENTS = [
+  'linear-gradient(135deg, #3b82f6, #6366f1)',
+  'linear-gradient(135deg, #8b5cf6, #ec4899)',
+  'linear-gradient(135deg, #10b981, #06b6d4)',
+  'linear-gradient(135deg, #f97316, #eab308)',
+  'linear-gradient(135deg, #ec4899, #f97316)',
+  'linear-gradient(135deg, #06b6d4, #3b82f6)',
+  'linear-gradient(135deg, #6366f1, #8b5cf6)',
+  'linear-gradient(135deg, #14b8a6, #10b981)',
+];
+
+const DEPT_COLORS = {
+  'Engineering':              { bg: '#dbeafe', text: '#1e40af' },
+  'Human Resources':          { bg: '#fce7f3', text: '#be185d' },
+  'Finance':                  { bg: '#dcfce7', text: '#166534' },
+  'Sales':                    { bg: '#ffedd5', text: '#c2410c' },
+  'Marketing':                { bg: '#fef3c7', text: '#92400e' },
+  'IT':                       { bg: '#e0e7ff', text: '#4338ca' },
+  'Operations':               { bg: '#cffafe', text: '#155e75' },
+  'Legal':                    { bg: '#f3f4f6', text: '#374151' },
+  'Product':                  { bg: '#ede9fe', text: '#6d28d9' },
+  'Admin':                    { bg: '#f0fdf4', text: '#166534' },
+  'Data & Analytics':         { bg: '#fdf4ff', text: '#9333ea' },
+  'Customer Support':         { bg: '#fff1f2', text: '#be123c' },
+};
+
+const getAvatarGradient = (name = '') => {
+  const code = (name.charCodeAt(0) || 0) + (name.charCodeAt(1) || 0);
+  return AVATAR_GRADIENTS[code % AVATAR_GRADIENTS.length];
+};
+
+const getInitials = (name = '') => {
+  const parts = name.trim().split(/\s+/);
+  if (parts.length === 1) return (parts[0][0] || '?').toUpperCase();
+  return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
+};
+
+const getDeptStyle = (dept) => DEPT_COLORS[dept] || { bg: '#f1f5f9', text: '#475569' };
 
 const EmployeeCard = ({ employee, onDelete }) => {
+  const name = employee.full_name || employee.name || '';
+  const deptStyle = getDeptStyle(employee.department);
+  const avatarGradient = getAvatarGradient(name);
+
   return (
-    <div className="bg-white rounded-lg shadow-[0_2px_8px_rgb(0,0,0,0.08)] border border-slate-100 p-5 flex flex-col items-center relative group hover:shadow-md transition-shadow">
+    <div className="bg-white rounded-2xl border border-slate-100 overflow-hidden group hover:shadow-xl hover:shadow-slate-200/70 hover:-translate-y-0.5 transition-all duration-200">
 
-      <button 
-        onClick={() => onDelete(employee.employee_id || employee.id)}
-        className="absolute top-3 right-3 flex items-center gap-1.5 bg-red-50 hover:bg-red-600 text-red-500 hover:text-white px-2.5 py-1.5 rounded-lg text-xs font-semibold transition-all opacity-0 group-hover:opacity-100 shadow-sm"
-        title="Delete Employee"
+      {/* Colored header */}
+      <div
+        className="h-16 relative flex items-start justify-end p-2.5"
+        style={{ backgroundColor: deptStyle.bg }}
       >
-        <Trash2 size={13} />
-        Delete
-      </button>
+        <button
+          onClick={() => onDelete(employee.employee_id || employee.id)}
+          className="p-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-all hover:bg-black/10"
+          style={{ color: deptStyle.text }}
+          title="Delete Employee"
+        >
+          <Trash2 size={13} />
+        </button>
 
-      <div className="w-20 h-20 bg-slate-200 rounded-full mb-4 flex items-center justify-center overflow-hidden">
-        <svg className="w-12 h-12 text-slate-400" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" />
-        </svg>
+        {/* Avatar — overlaps header/body boundary */}
+        <div
+          className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-14 h-14 rounded-xl flex items-center justify-center text-lg font-bold text-white shadow-md ring-[3px] ring-white select-none"
+          style={{ background: avatarGradient }}
+        >
+          {getInitials(name)}
+        </div>
       </div>
 
-      <div className="text-center w-full space-y-1">
-        <p className="text-slate-400 text-xs font-medium tracking-wide">{employee.employee_id || employee.id}</p>
-        <h3 className="font-bold text-[#333333] text-[15px] truncate">
-          {employee.full_name || employee.name}
-        </h3>
-        
-        <p className="text-slate-500 text-xs truncate w-full" title={employee.email}>
-          {employee.email}
-        </p>
-        
-        <p className="text-slate-400 text-xs truncate w-full inline-block mt-2">
+      {/* Body */}
+      <div className="pt-10 pb-4 px-4 text-center">
+        <h3 className="font-bold text-slate-800 text-sm truncate">{name}</h3>
+        <div className="flex items-center justify-center gap-1 mt-1 mb-3">
+          <Mail size={10} className="text-slate-300 shrink-0" />
+          <p className="text-slate-400 text-[11px] truncate" title={employee.email}>
+            {employee.email}
+          </p>
+        </div>
+        <span
+          className="inline-block px-3 py-1 rounded-full text-[11px] font-semibold"
+          style={{ backgroundColor: deptStyle.bg, color: deptStyle.text }}
+        >
           {employee.department}
-        </p>
+        </span>
+      </div>
+
+      {/* Footer */}
+      <div className="border-t border-slate-50 px-4 py-2.5 text-center">
+        <span className="text-slate-300 text-[10px] font-mono">
+          #{employee.employee_id || employee.id}
+        </span>
       </div>
     </div>
   );
