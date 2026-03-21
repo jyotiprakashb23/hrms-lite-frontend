@@ -83,7 +83,7 @@ const AddEmployeeModal = ({ isOpen, onClose }) => {
         {/* ── Gradient Header ── */}
         <div
           className="px-6 pt-6 pb-10 relative overflow-hidden"
-          style={{ background: 'linear-gradient(135deg, #0f172a 0%, #1e3a8a 55%, #312e81 100%)' }}
+          style={{ background: 'linear-gradient(135deg, #052e16 0%, #064e3b 55%, #065f46 100%)' }}
         >
           {/* dot grid */}
           <div
@@ -97,18 +97,18 @@ const AddEmployeeModal = ({ isOpen, onClose }) => {
           <div
             className="absolute -right-8 -top-8 w-36 h-36 rounded-full pointer-events-none"
             style={{
-              background: 'radial-gradient(circle, rgba(99,102,241,0.5) 0%, transparent 70%)',
+              background: 'radial-gradient(circle, rgba(16,185,129,0.5) 0%, transparent 70%)',
               filter: 'blur(24px)',
             }}
           />
 
           <div className="relative z-10 flex items-start justify-between">
             <div>
-              <p className="text-blue-300 text-[10px] font-bold uppercase tracking-widest mb-1">
+              <p className="text-emerald-300 text-[10px] font-bold uppercase tracking-widest mb-1">
                 New Record
               </p>
               <h2 className="text-white text-lg font-extrabold leading-tight">Add Employee</h2>
-              <p className="text-blue-400/70 text-xs mt-0.5">Fill in the details to onboard a new member</p>
+              <p className="text-emerald-400/70 text-xs mt-0.5">Fill in the details to onboard a new member</p>
             </div>
             <button
               onClick={onClose}
@@ -154,7 +154,7 @@ const AddEmployeeModal = ({ isOpen, onClose }) => {
                 required type="text" name="full_name" value={formData.full_name}
                 onChange={handleChange}
                 placeholder="e.g. John Doe"
-                className="w-full border border-slate-200 rounded-xl pl-9 pr-4 py-2.5 text-sm bg-slate-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all placeholder:text-slate-300"
+                className="w-full border border-slate-200 rounded-xl pl-9 pr-4 py-2.5 text-sm bg-slate-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all placeholder:text-slate-300"
               />
             </div>
           </div>
@@ -170,7 +170,7 @@ const AddEmployeeModal = ({ isOpen, onClose }) => {
                 required type="email" name="email" value={formData.email}
                 onChange={handleChange}
                 placeholder="john.doe@company.com"
-                className="w-full border border-slate-200 rounded-xl pl-9 pr-4 py-2.5 text-sm bg-slate-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all placeholder:text-slate-300"
+                className="w-full border border-slate-200 rounded-xl pl-9 pr-4 py-2.5 text-sm bg-slate-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all placeholder:text-slate-300"
               />
             </div>
           </div>
@@ -232,8 +232,8 @@ const AddEmployeeModal = ({ isOpen, onClose }) => {
             </button>
             <button
               type="submit" disabled={isSubmitting}
-              className="flex-1 py-2.5 text-white rounded-xl text-sm font-bold transition-all flex items-center justify-center gap-2 disabled:opacity-60 shadow-md shadow-blue-200 hover:shadow-blue-300 active:scale-[0.98]"
-              style={{ background: 'linear-gradient(135deg, #3b82f6 0%, #6366f1 100%)' }}
+              className="flex-1 py-2.5 text-white rounded-xl text-sm font-bold transition-all flex items-center justify-center gap-2 disabled:opacity-60 shadow-md shadow-emerald-200 hover:shadow-emerald-300 active:scale-[0.98]"
+              style={{ background: 'linear-gradient(135deg, #059669 0%, #0d9488 100%)' }}
             >
               {isSubmitting && <Loader2 size={14} className="animate-spin" />}
               {isSubmitting ? 'Saving…' : 'Add Employee'}

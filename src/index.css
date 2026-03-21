@@ -1,9 +1,9 @@
 @import "tailwindcss";
 
 @theme {
-  --color-zoho-dark: #111827;
+  --color-zoho-dark: #0d1f17;
   --color-zoho-nav: #1e293b;
-  --color-zoho-bg: #f1f5f9;
+  --color-zoho-bg: #f0fdf4;
   --color-zoho-text: #1e293b;
 }
 

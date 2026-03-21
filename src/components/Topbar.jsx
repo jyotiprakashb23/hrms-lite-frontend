@@ -36,7 +36,7 @@ const Topbar = ({ onMenuClick }) => {
         <span className="hidden md:block text-slate-400 text-xs bg-slate-50 px-3 py-1.5 rounded-lg border border-slate-100">
           {today}
         </span>
-        <div className="w-8 h-8 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-white text-xs font-bold cursor-pointer">
+        <div className="w-8 h-8 rounded-full bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center text-white text-xs font-bold cursor-pointer">
           A
         </div>
       </div>

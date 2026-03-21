@@ -69,7 +69,7 @@ const Dashboard = () => {
       {/* ── Welcome Banner ── */}
       <div
         className="rounded-2xl p-6 mb-5 relative overflow-hidden shrink-0"
-        style={{ background: 'linear-gradient(135deg, #0f172a 0%, #1e3a8a 55%, #312e81 100%)' }}
+        style={{ background: 'linear-gradient(135deg, #052e16 0%, #064e3b 55%, #065f46 100%)' }}
       >
         {/* Dot grid */}
         <div
@@ -82,22 +82,22 @@ const Dashboard = () => {
         {/* Orbs */}
         <div
           className="absolute -right-12 -top-12 w-48 h-48 rounded-full pointer-events-none"
-          style={{ background: 'radial-gradient(circle, rgba(99,102,241,0.4) 0%, transparent 70%)', filter: 'blur(32px)' }}
+          style={{ background: 'radial-gradient(circle, rgba(16,185,129,0.4) 0%, transparent 70%)', filter: 'blur(32px)' }}
         />
         <div
           className="absolute right-20 bottom-0 w-28 h-28 rounded-full pointer-events-none"
-          style={{ background: 'radial-gradient(circle, rgba(59,130,246,0.25) 0%, transparent 70%)', filter: 'blur(24px)' }}
+          style={{ background: 'radial-gradient(circle, rgba(20,184,166,0.25) 0%, transparent 70%)', filter: 'blur(24px)' }}
         />
 
         <div className="relative z-10 flex items-center justify-between gap-4 flex-wrap">
           <div>
-            <p className="text-blue-300 text-xs font-semibold mb-1">{getGreeting()}, Admin 👋</p>
+            <p className="text-emerald-300 text-xs font-semibold mb-1">{getGreeting()}, Admin 👋</p>
             <h1 className="text-white text-xl font-extrabold leading-tight">Team Overview</h1>
-            <p className="text-blue-400/70 text-xs mt-1">{today}</p>
+            <p className="text-emerald-400/70 text-xs mt-1">{today}</p>
           </div>
           <button
             onClick={() => setIsModalOpen(true)}
-            className="flex items-center gap-2 bg-white text-blue-900 hover:bg-blue-50 px-4 py-2.5 rounded-xl text-sm font-bold transition-colors shadow-lg shrink-0"
+            className="flex items-center gap-2 bg-white text-emerald-900 hover:bg-emerald-50 px-4 py-2.5 rounded-xl text-sm font-bold transition-colors shadow-lg shrink-0"
           >
             <Plus size={15} />
             Add Employee
@@ -111,7 +111,7 @@ const Dashboard = () => {
 
           <div
             className="rounded-2xl p-5 relative overflow-hidden"
-            style={{ background: 'linear-gradient(135deg, #1d4ed8, #3b82f6)' }}
+            style={{ background: 'linear-gradient(135deg, #059669, #34d399)' }}
           >
             <div className="absolute -right-4 -top-4 w-20 h-20 bg-white/10 rounded-full" />
             <div className="absolute right-6 bottom-1 w-10 h-10 bg-white/5 rounded-full" />
@@ -120,13 +120,13 @@ const Dashboard = () => {
                 <Users size={16} className="text-white" />
               </div>
               <p className="text-white text-3xl font-extrabold leading-none">{employees.length}</p>
-              <p className="text-blue-200 text-xs mt-1.5 font-medium">Total Employees</p>
+              <p className="text-emerald-100 text-xs mt-1.5 font-medium">Total Employees</p>
             </div>
           </div>
 
           <div
             className="rounded-2xl p-5 relative overflow-hidden"
-            style={{ background: 'linear-gradient(135deg, #7c3aed, #a855f7)' }}
+            style={{ background: 'linear-gradient(135deg, #0d9488, #2dd4bf)' }}
           >
             <div className="absolute -right-4 -top-4 w-20 h-20 bg-white/10 rounded-full" />
             <div className="absolute right-6 bottom-1 w-10 h-10 bg-white/5 rounded-full" />
@@ -135,7 +135,7 @@ const Dashboard = () => {
                 <Building2 size={16} className="text-white" />
               </div>
               <p className="text-white text-3xl font-extrabold leading-none">{departments.length}</p>
-              <p className="text-purple-200 text-xs mt-1.5 font-medium">Departments</p>
+              <p className="text-teal-100 text-xs mt-1.5 font-medium">Departments</p>
             </div>
           </div>
         </div>
@@ -152,7 +152,7 @@ const Dashboard = () => {
               placeholder="Search by name, department or ID…"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="w-full border border-slate-200 rounded-xl pl-9 pr-9 py-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all placeholder:text-slate-300"
+              className="w-full border border-slate-200 rounded-xl pl-9 pr-9 py-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all placeholder:text-slate-300"
             />
             {search && (
               <button
@@ -182,8 +182,8 @@ const Dashboard = () => {
                 onClick={() => setDeptFilter(dept === deptFilter ? null : dept)}
                 className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
                   deptFilter === dept
-                    ? 'bg-blue-600 text-white shadow-sm'
-                    : 'bg-white border border-slate-200 text-slate-500 hover:border-blue-300 hover:text-blue-600'
+                    ? 'bg-emerald-600 text-white shadow-sm'
+                    : 'bg-white border border-slate-200 text-slate-500 hover:border-emerald-300 hover:text-emerald-600'
                 }`}
               >
                 {dept}
@@ -213,7 +213,7 @@ const Dashboard = () => {
             <p className="text-slate-400 text-xs mt-1 mb-5">Add your first employee to get started</p>
             <button
               onClick={() => setIsModalOpen(true)}
-              className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-xl text-sm font-medium transition-colors"
+              className="flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded-xl text-sm font-medium transition-colors"
             >
               <Plus size={14} />
               Add Employee
@@ -228,7 +228,7 @@ const Dashboard = () => {
             <p className="text-slate-400 text-xs mt-1 mb-4">Try a different name or department</p>
             <button
               onClick={() => { setSearch(''); setDeptFilter(null); }}
-              className="text-xs text-blue-600 hover:text-blue-800 font-semibold"
+              className="text-xs text-emerald-600 hover:text-emerald-800 font-semibold"
             >
               Clear filters
             </button>
@@ -238,12 +238,12 @@ const Dashboard = () => {
             <div className="flex items-center justify-between mb-3">
               <p className="text-xs text-slate-400 font-medium">
                 {hasFilters ? `${filtered.length} of ${employees.length}` : `${employees.length}`} employee{employees.length !== 1 ? 's' : ''}
-                {deptFilter && <span className="ml-1 text-blue-500">in {deptFilter}</span>}
+                {deptFilter && <span className="ml-1 text-emerald-500">in {deptFilter}</span>}
               </p>
               {hasFilters && (
                 <button
                   onClick={() => { setSearch(''); setDeptFilter(null); }}
-                  className="text-xs text-blue-500 hover:text-blue-700 font-semibold flex items-center gap-1"
+                  className="text-xs text-emerald-500 hover:text-emerald-700 font-semibold flex items-center gap-1"
                 >
                   <X size={11} /> Clear
                 </button>

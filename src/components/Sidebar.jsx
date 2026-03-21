@@ -17,10 +17,10 @@ const Sidebar = ({ closeSidebar }) => {
   };
 
   return (
-    <aside className="w-64 flex flex-col h-full shrink-0 bg-[#111827] shadow-2xl">
+    <aside className="w-64 flex flex-col h-full shrink-0 bg-[#0d1f17] shadow-2xl">
       {/* Brand */}
       <div className="px-5 py-5 flex items-center gap-3 border-b border-white/10">
-        <div className="w-9 h-9 bg-blue-600 rounded-xl flex items-center justify-center shadow-lg shrink-0">
+        <div className="w-9 h-9 bg-emerald-600 rounded-xl flex items-center justify-center shadow-lg shrink-0">
           <Briefcase size={17} className="text-white" />
         </div>
         <div>
@@ -40,7 +40,7 @@ const Sidebar = ({ closeSidebar }) => {
               <div
                 className={`flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all cursor-pointer ${
                   isActive
-                    ? 'bg-blue-600 text-white shadow-lg'
+                    ? 'bg-emerald-600 text-white shadow-lg'
                     : 'text-slate-400 hover:bg-white/5 hover:text-slate-200'
                 }`}
               >
@@ -61,7 +61,7 @@ const Sidebar = ({ closeSidebar }) => {
       {/* User Footer */}
       <div className="p-4 border-t border-white/10">
         <div className="flex items-center gap-3 px-1 mb-3">
-          <div className="w-8 h-8 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-white text-xs font-bold shrink-0">
+          <div className="w-8 h-8 rounded-full bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center text-white text-xs font-bold shrink-0">
             A
           </div>
           <div className="min-w-0">
